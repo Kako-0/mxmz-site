@@ -1,0 +1,80 @@
+.share
+    display flex
+    width 0
+    height 40px
+    z-index 12
+    transition width 500ms ease
+    overflow hidden
+
+    &--active
+        width 100%
+
+.share__container
+    display flex
+    align-items center
+    justify-content space-between
+    width 288px
+
+.share__item
+    display flex
+    align-items center
+    justify-content center
+    color $branco
+    text-decoration none
+    width 40px
+    height 40px
+    font-size 14px
+    transition all 300ms ease
+    // margin 0 5px
+
+// .share__holder
+//     background-color $quasebranco
+//     min-width 60%
+//     height 5px
+//     margin 10px auto
+//     border-radius 5px
+
+.share__item--facebook
+    background-color #3b5999
+
+    &:after
+        fa-icon('facebook')
+
+    &:hover
+        background-color darken(#3b5999, 30%)
+
+.share__item--twitter
+    background-color #55acee
+
+    &:after
+        fa-icon('twitter')
+
+    &:hover
+        background-color darken(#55acee, 30%)
+
+.share__item--whatsapp
+    background-color #25D366
+
+    &:after
+        fa-icon('whatsapp')
+
+    &:hover
+        background-color darken(#25D366, 30%)
+
+.share__item--linkedin
+    background-color #0077B5
+
+    &:after
+        fa-icon('linkedin')
+
+    &:hover
+        background-color darken(#0077B5, 30%)
+
+.share__item--email
+    background-color $cor-primaria
+
+    &:after
+        fa-icon('envelope')
+
+    &:hover
+        background-color darken($cor-primaria, 30%)

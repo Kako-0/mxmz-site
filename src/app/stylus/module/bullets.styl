@@ -1,0 +1,24 @@
+.bullets
+    display flex
+    align-items center
+    justify-content center
+
+.bullets__item
+    display flex
+    align-items center
+    justify-content center
+    square 7px
+    border-radius 5px
+    margin 0 5px
+    border 1px solid $cinza
+    text-indent -9999px
+    overflow hidden
+    cursor pointer
+
+    &:hover
+        border-color $cor-secundaria
+        background-color $cor-secundaria
+
+    &--current
+        border-color $cor-primaria
+        background-color $cor-primaria

@@ -1,0 +1,58 @@
+.media
+    position relative
+    grid-column 2
+    cursor pointer
+    overflow hidden
+
+    &:before
+        content '+'
+        display flex
+        align-items center
+        justify-content center
+        color $branco
+        square 50px
+        border-radius 30px
+        center()
+        z-index 5
+        font-size 32px
+        font-weight 500
+        transition all .2s ease-in-out
+        opacity 0
+
+    &:before
+        background-color $cor-primaria
+
+    &:hover
+        &:before
+            opacity 1
+            background-color $cor-secundaria
+
+        .media__img
+            transform scale(1.05)
+
+.media__img
+    display block
+    max-width 100%
+    width 100%
+    height auto
+    transition all 1.5s ease
+
+.media__caption
+    position relative
+    display flex
+    align-items center
+    margin-top 10px
+    padding-left 10px
+    font-size 12px
+    font-size 600
+    color $cinzaescuro
+
+    &:before
+        position absolute
+        content ''
+        top 0
+        left 0
+        display block
+        width 1px
+        height 20px
+        background-color $cor-secundaria

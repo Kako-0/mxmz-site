@@ -1,0 +1,34 @@
+.breadcrumb
+    display flex
+    color $branco
+    font-size 10px
+    font-weight 500
+    text-transform uppercase
+    list-style none
+    letter-spacing 0.5px
+
+.breadcrumb__item
+    margin-right 5px
+
+    &:after
+        content ' > '
+
+    &:last-child:after
+        content ''
+
+.breadcrumb__link
+    color $branco
+    text-decoration none
+
+    &:hover
+        text-decoration underline
+
+@media $small
+    .breadcrumb
+        display inline
+        line-height 1.2
+        font-size 9px
+
+    .breadcrumb__item
+        display inline
+        margin-right 0

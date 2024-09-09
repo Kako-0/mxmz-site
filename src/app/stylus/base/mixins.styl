@@ -1,0 +1,117 @@
+bg(image = 'sprite.png', $left = center, $top = center, $color = transparent, $repeat = no-repeat)
+    background $color url('../img/'image) $repeat $left $top
+
+bgi(image = 'sprite.png')
+    background-image url('../img/'image)
+
+bgsize(arguments)
+    background-size arguments
+
+border-top-radius()
+    border-top-left-radius: arguments
+    border-top-right-radius: arguments
+
+border-bottom-radius()
+    border-bottom-left-radius: arguments
+    border-bottom-right-radius: arguments
+
+border-left-radius()
+    border-top-left-radius: arguments
+    border-bottom-left-radius: arguments
+
+border-right-radius()
+    border-top-right-radius: arguments
+    border-bottom-right-radius: arguments
+
+center(y = 0, x = 0)
+    position absolute
+    top 50%
+    left 50%
+    margin (@height / -2)+y 0 0 (@width / -2)+x
+
+centerx(x = 0, pos = absolute)
+    position pos
+    left 50%
+    margin-left (@width / -2) + x
+
+centery(y = 0)
+    position absolute
+    top 50%
+    margin-top (@height / -2) + y
+
+font-family()
+    font-family arguments
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+
+// opacity(n)
+//     -ms-filter \"unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + n * 100 + ')')\"
+//     -khtml-opacity n
+//     -moz-opacity n
+//     opacity n
+
+placeholder(arguments)
+    &::-webkit-input-placeholder
+        color arguments
+    &::-moz-placeholder
+        color arguments
+    &:-ms-input-placeholder
+        color arguments
+    &:-moz-placeholder
+        color arguments
+
+replace(image = 'sprite.png', $left = center, $top = center, $color = transparent, $repeat = no-repeat)
+    display block
+    border 0
+    background $color url('../img/'image) $repeat $left $top
+    text-indent -9999px
+    overflow hidden
+
+size(width = 5px, height = 5px)
+    width width
+    height height
+
+square(squaresize = 5px)
+    size(squaresize, squaresize)
+
+// GRID
+row()
+    display block
+    width 100%
+    margin 0 auto auto 0
+
+    &:after
+        clearfix()
+
+column($number, $space-between=1.5em)
+    float left
+    padding 0 $space-between/2
+    width (100/(12/$number))+"%"
+    left auto
+    right auto
+    min-height 1px
+    box-sizing border-box
+
+offset($number)
+    margin-left (100/(12/$number))+"%"
+
+pull($number)
+    position relative
+    right (100/(12/$number))+"%"
+
+push($number)
+    position relative
+    left (100/(12/$number))+"%"
+
+site-lines($top = -125px, $color = $quasecinza)
+    content ''
+    display block
+    width (100/3)%
+    height 100%
+    position absolute
+    left (100/3)%
+    top $top
+    border 1px solid $color
+    border-top transparent
+    border-bottom transparent
+    z-index -1

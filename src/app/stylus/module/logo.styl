@@ -1,0 +1,18 @@
+.logo
+    square 100%
+
+.logo__link
+    size 67px 36px
+    replace('logo.svg')
+    background-size contain
+    transition all .1s ease
+
+    &:before
+        display none
+
+    // &:hover
+    //     filter invert(1)
+
+.header--light
+    .logo__link
+        bgi('logo-light.svg')

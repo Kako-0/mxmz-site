@@ -1,0 +1,142 @@
+.portfolio
+    padding 220px 0 100px
+    box-sizing border-box
+    color $branco
+    background $preto
+
+.portfolio__title
+    position fixed
+    z-index 1
+    top 0
+    right 0
+    width 100%
+    height 100%
+    bg('portfolio-title.png')
+    background-size auto 608px
+    background-position right center
+
+.portfolio__container
+    position relative
+    z-index 3
+
+.portfolio__separador
+    grid-area separador
+    width 85%
+    height 1px
+    margin 0 5% 0 10%
+    background-color $vermelho
+    align-self center
+
+.portfolio__description
+    grid-area desc
+    max-width 600px
+    margin 90px 0 120px
+    color $branco
+
+.portfolio__subtitle
+    position relative
+    color $vermelho
+
+.portfolio__header
+    display grid
+    grid-template-columns auto 1fr auto
+    grid-template-areas 'title separador tipo' 'desc desc .'
+
+.portfolio__tipo
+    grid-area tipo
+    max-width 180px
+    text-align right
+    font-size 30px
+    color $vermelho
+    line-height 1
+    font-weight 800
+    text-decoration none
+
+    &:before
+        content 'Veja também'
+        display block
+        margin-bottom 15px
+        color $branco
+        font-size 14px
+        cursor default
+        font-weight 600
+
+    &--current
+        grid-area title
+        color $branco
+        font-size 60px
+        text-align left
+        font-weight 800
+        max-width 300px
+        line-height 1
+        cursor default
+        pointer-events none
+
+        &:before
+            display none
+
+// .portfolio__outro
+
+// .portfolio__list
+
+.portfolio__item
+    position relative
+    display flex
+    align-items flex-start
+    justify-content center
+    flex-direction column
+    padding 100px
+    min-height 400px
+    margin-bottom 20px
+    box-sizing border-box
+    text-decoration none
+    color $branco
+
+    &:before
+        content ''
+        position absolute
+        z-index 0
+        top 0
+        left 0
+        square 100%
+        background-color alpha($preto, 40%)
+        opacity 1
+        transition all 500ms ease
+
+    &:hover
+        &:before
+            opacity 0
+
+.portfolio__info
+    display flex
+    position relative
+    margin-top 20px
+
+.portfolio__categorias
+    display flex
+    text-transform uppercase
+
+.portfolio__categoria,
+.portfolio__data
+    letter-spacing 6px
+    font-size 11px
+    font-weight 600
+
+    &:before
+        content '|'
+        opacity .5
+        margin 0 10px
+
+    &:first-child:before
+        display none
+
+.portfolio__data
+    &:before
+        content ''
+        display inline-block
+        width 25px
+        height 1px
+        margin 0 30px
+        transform translateY(-3px)
+        opacity .6
+        background-color $branco
