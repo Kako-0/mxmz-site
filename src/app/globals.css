@@ -169,7 +169,7 @@ body {
       left: -2px;
       width: 100%;
       height: 1px;
-      background-color: var(--branco);
+      background-color: currentColor;
       visibility: hidden;
       transform-origin: 0 0;
       transform: scaleX(0);
@@ -181,10 +181,29 @@ body {
     }
   }
 
-  @media (min-width: 640px) {
-    .menuLine::before {
-      font-size: calc(24vw - 100%);
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view(block)) {
+      .changeColorNavOnScroll {
+        animation: changeColorNavOnScroll both;
+        animation-timeline: view(block);
+        animation-range: contain 150% cover 200%;
+      }
     }
+
+    @keyframes changeColorNavOnScroll {
+      0% {
+        color: var(--branco);
+      }
+      100% {
+        color: var(--cor-secundaria);
+      }
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .menuLine::before {
+    font-size: calc(24vw - 100%);
   }
 }
 

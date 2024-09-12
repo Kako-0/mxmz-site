@@ -28,15 +28,15 @@ type SocialProps = {
 
 export default function Social({ styleContainer, styleIcon }: SocialProps) {
   return (
-    <div>
+    <div className="flex items-center">
       <ul className={styleContainer}>
         {medias.map((media) => (
-          <li key={media.name}>
+          <li key={media.name} className="nav__link relative py-2">
             <Link
               href={media.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[18px] text-accent"
+              className={` text-[18px] text-accent ${styleIcon}`}
             >
               {media.icon}
             </Link>
