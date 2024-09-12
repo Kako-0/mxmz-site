@@ -28,7 +28,6 @@ export default function NavMobile() {
         <Image src={MenuIcon} alt="Menu" width={28} height={28} />
       </SheetTrigger>
       <SheetContent className="linearRed p-24 px-16 menuLine">
-        {width}
         <nav className="flex flex-col justify-end h-full">
           <ul className="grid gap-8">
             {links.map(({ href, label }) => (
