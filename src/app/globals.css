@@ -180,25 +180,6 @@ body {
       transform: scaleX(1) !important;
     }
   }
-
-  @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: view(block)) {
-      .changeColorNavOnScroll {
-        animation: changeColorNavOnScroll both;
-        animation-timeline: view(block);
-        animation-range: contain 150% cover 200%;
-      }
-    }
-
-    @keyframes changeColorNavOnScroll {
-      0% {
-        color: var(--branco);
-      }
-      100% {
-        color: var(--cor-secundaria);
-      }
-    }
-  }
 }
 
 @media (min-width: 640px) {
