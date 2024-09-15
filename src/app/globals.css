@@ -72,6 +72,7 @@ body {
 
     --cor-primaria: var(--preto);
     --cor-secundaria: var(--vermelho);
+    --linear-black: linear-gradient(180deg, #000, transparent 33%);
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -122,6 +123,8 @@ body {
 
     --cor-primaria: var(--preto);
     --cor-secundaria: var(--vermelho);
+
+    --linear-black: linear-gradient(180deg, #000, transparent 33%);
   }
 
   .linearRed {
@@ -149,7 +152,7 @@ body {
     font-size: 22vw;
     line-height: 0.8;
     font-weight: 700;
-    -webkit-text-stroke: 1px var(--branco);
+    -webkit-text-stroke: 1px var(--preto);
     color: transparent;
     text-transform: uppercase;
     position: absolute;
