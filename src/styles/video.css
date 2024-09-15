@@ -1,0 +1,27 @@
+.video__play {
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -80px;
+    display: block;
+    width: 45px;
+    height: 45px;
+    transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+}
+
+.video__play:before {
+  border: 2px solid var(--vermelho);
+  border-radius: 50px;
+}
+.video__play:after {
+  width: 0;
+  height: 0;
+  top: -1px;
+  left: -62px;
+  border-color: transparent transparent transparent var(--vermelho);
+  border-style: solid;
+  border-width: 9px 0 9px 13px;
+}
