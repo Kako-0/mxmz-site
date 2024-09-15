@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.landing::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100dvh;
+  background-color: var(--vermelho);
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 85%);
+  transition: all 0.5s ease-in-out;
+}
+
+.landing::after {
+  content: '';
+  display: none;
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  pointer-events: none;
+  width: 2px;
+  height: 12%;
+  background-color: var(--branco);
+}
+
+@media (min-width: 640px) {
+  .landing::before {
+    clip-path: polygon(0 0, 0% 100%, 100% 0);
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing::after {
+    display: block;
+  }
+}
+
+@layer components {
+  .landing__link {
+    @apply grid gap-2 sm:gap-4 tracking-tight text-[28px] sm:text-4xl md:text-6xl font-semibold max-w-48 md:max-w-min relative z-10;
+
+    span {
+      @apply text-xs sm:text-sm md:text-base font-medium tracking-normal;
+    }
+  }
+}
