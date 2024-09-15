@@ -13,10 +13,10 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById('second');
-      const sectionTop = section?.offsetTop || 0;
+      const section = document.getElementById('landing');
+      const sectionHeight = section?.getBoundingClientRect().height;
 
-      if (window.scrollY > sectionTop - 50) {
+      if (sectionHeight && window.scrollY > sectionHeight) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -37,9 +37,9 @@ export default function Nav() {
           <li key={href}>
             <motion.a
               href={href}
-              className={`uppercase text-[11px] tracking-[6px] text-white font-semibold nav__link relative py-2 ${
-                isScrolled ? 'text-secondary' : 'text-white'
-              }`}
+              className={
+                'uppercase text-[11px] tracking-[6px] font-semibold nav__link relative py-2 text-white'
+              }
               animate={{ color: isScrolled ? '#ff3644' : '#ffffff' }}
               transition={{ duration: 0.4 }}
             >
