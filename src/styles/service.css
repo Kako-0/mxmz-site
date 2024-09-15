@@ -1,0 +1,13 @@
+.services__list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.services__item {
+  width: 30%;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+}
