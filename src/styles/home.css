@@ -1,0 +1,47 @@
+.home__bg {
+  &::before,
+  &::after {
+    content: 'WE\AKNOW\AWHAT\AWE DO';
+    white-space: pre-wrap;
+    text-align: end;
+    font-size: 12dvh;
+    line-height: 0.8;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    text-transform: uppercase;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+    width: 100%;
+    opacity: 0.6;
+  }
+}
+
+.home__bg::before {
+  -webkit-text-stroke-color: var(--vermelho);
+}
+.home__bg::after {
+  opacity: 0.4;
+  -webkit-text-stroke-color: var(--preto);
+}
+
+@media (min-width: 640px) {
+  .home__bg {
+    &::before,
+    &::after {
+      font-size: 20dvh;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .home__bg {
+    &::before,
+    &::after {
+      font-size: 32dvh;
+      top: 0;
+    }
+  }
+}
