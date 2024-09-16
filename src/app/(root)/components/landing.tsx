@@ -4,7 +4,7 @@ import '@/styles/landing.css';
 export default function Landing() {
   return (
     <div
-      className="flex flex-col gap-32 justify-center min-h-dvh landing lg:flex-row lg:gap-2 lg:items-center lg:justify-between"
+      className="flex flex-col gap-32 justify-center min-h-dvh landing lg:flex-row lg:gap-2 lg:items-center lg:justify-between container sm:w-4/5 min-[1920]:w-9/12 mx-auto px-4 sm:px-0"
       id="landing"
     >
       <Link className="landing__link" href="/portfolio">
