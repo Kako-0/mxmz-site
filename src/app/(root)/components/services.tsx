@@ -22,14 +22,14 @@ const list = [
 
 export default function Services() {
   return (
-    <div className="flex flex-col gap-16 relative z-[1] lg:flex-row lg:gap-8">
+    <div className="flex flex-col gap-16 relative z-[1] lg:flex-row lg:gap-8 mb-8">
       <div className="">
         <p className="font-medium w-5/6 lg:w-3/5 text-sm leading-6 mb-8">
           Confira alguns dos trabalhos que desenvolvemos para nossos clientes, sempre buscando
           alcançar os objetivos propostos e maximizar resultados.
         </p>
-        <Button asChild variant="outline">
-          <Link href="/portfolio" className="uppercase w-fit px-10 tracking-wider">
+        <Button asChild variant="outline" size="lg">
+          <Link href="/portfolio" className="uppercase px-16 tracking-wider">
             Veja nossos cases
           </Link>
         </Button>
