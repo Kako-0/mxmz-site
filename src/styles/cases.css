@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (min-width: 1024px) {
+  .cases__title {
+    writing-mode: vertical-lr;
+    @apply h-fit w-fit rotate-180;
+  }
+}
