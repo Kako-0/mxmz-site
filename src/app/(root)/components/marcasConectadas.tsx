@@ -47,7 +47,7 @@ const marcas = [
 
 export default function MarcasConectadas() {
   return (
-    <div className="min-h-dvh h-full w-full" id="marcas">
+    <div className="h-full w-full" id="marcas">
       <h3 className="text-4xl sm:text-6xl font-semibold -tracking-[3px] mb-24">
         Marcas
         <br />
