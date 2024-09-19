@@ -43,11 +43,11 @@ const cases = [
 export default function Cases() {
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   return (
-    <div className="grid gap-10 lg:grid-cols-[auto_1fr] lg:min-h-[60dvh]">
-      <h3 className="text-[28px] md:text-4xl lg:text-lg lg:tracking-[5px] lg:uppercase leading-none -tracking-[1] font-bold w-56 cases__title">
+    <div className="flex flex-col gap-10 lg:gap-16 lg:flex-row lg:min-h-[60dvh]">
+      <h3 className="text-[28px] md:text-4xl lg:text-lg lg:tracking-[5px] lg:uppercase leading-none -tracking-[1] font-bold w-56 cases__title flex-[0]">
         Cases em destaque
       </h3>
-      <ul className="lg:relative">
+      <ul className="lg:relative lg:flex-1">
         {cases.map((item, index) => (
           <li key={item.title} className="group">
             <Link
@@ -55,16 +55,14 @@ export default function Cases() {
               target="_blank"
               rel="noreferrer"
               className="relative flex justify-end group-even:justify-start lg:group-even:justify-end lg:static"
-              onMouseEnter={() => setHoveredIndex(index)} // Define o índice do item em hover
-              onMouseLeave={() => setHoveredIndex(index)} // Persiste o estado de hover
             >
               <Image
                 src={item.thumb}
                 alt={item.title}
-                className={`relative right-0 top-0 -z-[1] w-3/4 visible lg:absolute ${
+                className={`relative right-0 top-0 -z-[1] w-3/4 lg:h-[60dvh] lg:object-contain lg:absolute transform transition-all duration-500 ease-in-out ${
                   index === 0 || hoveredIndex === index
-                    ? 'lg:visible'
-                    : 'lg:invisible lg:group-hover:visible'
+                    ? 'lg:translate-x-0 lg:opacity-100'
+                    : 'lg:translate-x-10 lg:opacity-0'
                 } lg:group-first:block`}
               />
               <div className="absolute top-12 left-0 leading-normal w-full grid items-start gap-1 group-even:justify-end group-even:justify-items-end lg:group-even:justify-start lg:group-even:justify-items-start lg:static">
@@ -75,13 +73,14 @@ export default function Cases() {
                       : 'hover:text-white hover:before:scale-x-100 before:scale-x-0 before:bg-[var(--grafite)]'
                   }`}
                   onMouseEnter={() => setHoveredIndex(index)} // Define o hover para a imagem associada ao título
-                  onMouseLeave={() => setHoveredIndex(index)} // Persiste o estado
                 >
                   {item.title}
                 </h4>
                 <div
-                  className={`opacity-100 flex gap-4 px-2 py-1 text-[10px] font-semibold sm:text-sm sm:px-5 uppercase tracking-[3px] bg-[var(--grafite)] w-fit lg:py-0 lg:bg-transparent lg:absolute lg:top-0 lg:right-0 lg:flex-col lg:gap-0 lg:items-end lg:tracking-[6px] lg:text-base transition-opacity ${
-                    hoveredIndex === index ? 'lg:opacity-100 lg:flex' : 'lg::opacity-0 lg:hidden'
+                  className={`opacity-100 flex gap-4 px-2 py-1 text-[10px] font-semibold sm:text-sm sm:px-5 uppercase tracking-[3px] bg-[var(--grafite)] w-fit lg:p-0 lg:bg-transparent lg:absolute lg:top-0 lg:right-0 lg:flex-col lg:gap-0 lg:items-end lg:tracking-[6px] lg:text-base transform transition-all duration-500 ease-in-out ${
+                    hoveredIndex === index
+                      ? 'lg:opacity-100 lg:flex lg:translate-x-0'
+                      : 'lg::opacity-0 lg:hidden lg:translate-x-16'
                   }`}
                 >
                   <p>{item.subtitle}</p>
