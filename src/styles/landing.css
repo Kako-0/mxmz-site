@@ -15,27 +15,9 @@
   transition: all 0.5s ease-in-out;
 }
 
-.landing::after {
-  content: '';
-  display: none;
-  position: absolute;
-  top: 25%;
-  left: 10%;
-  pointer-events: none;
-  width: 2px;
-  height: 12%;
-  background-color: var(--branco);
-}
-
 @media (min-width: 640px) {
   .landing::before {
     clip-path: polygon(0 0, 0% 100%, 100% 0);
-  }
-}
-
-@media (min-width: 1024px) {
-  .landing::after {
-    display: block;
   }
 }
 
