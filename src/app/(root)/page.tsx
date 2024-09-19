@@ -16,7 +16,7 @@ export default function Home() {
             <Video />
             <Services />
             <Cases />
-            {/*<MarcasConectadas /> */}
+            <MarcasConectadas />
           </div>
         </div>
       </div>
