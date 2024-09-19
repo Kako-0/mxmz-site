@@ -152,7 +152,7 @@ body {
     font-size: 22vw;
     line-height: 0.8;
     font-weight: 700;
-    -webkit-text-stroke: 1px var(--preto);
+    -webkit-text-stroke: 2px var(--preto);
     color: transparent;
     text-transform: uppercase;
     position: absolute;
