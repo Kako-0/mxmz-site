@@ -10,7 +10,7 @@ const Header = () => {
     <header className="fixed z-10 p-10 px-8 flex justify-between items-center w-full  ">
       <Slogan />
       <Link href="/">
-        <Image src={Logo} width={67} height={36} alt="Maximize" />
+        <Image src={Logo} width={67} height={36} alt="Maximize" priority />
       </Link>
 
       <Nav />

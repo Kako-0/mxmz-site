@@ -16,7 +16,7 @@ export default function Nav() {
       const section = document.getElementById('landing');
       const sectionHeight = section?.getBoundingClientRect().height;
 
-      if (sectionHeight && window.scrollY > sectionHeight) {
+      if (section && sectionHeight && window.scrollY <= sectionHeight) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -40,7 +40,7 @@ export default function Nav() {
               className={
                 'uppercase text-[11px] tracking-[6px] font-semibold nav__link relative py-2 text-white'
               }
-              animate={{ color: isScrolled ? '#ff3644' : '#ffffff' }}
+              animate={{ color: isScrolled ? '#ffffff' : '#ff3644' }}
               transition={{ duration: 0.4 }}
             >
               {label}
