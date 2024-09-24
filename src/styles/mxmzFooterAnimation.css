@@ -1,205 +1,80 @@
-.footer__intro {
-  max-width: 400px;
-  margin-bottom: 15vh;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.footer__endereco {
-  position: relative;
-  z-index: 5;
-  color: var(--branco);
-}
-.footer__endereco address {
-  font-weight: 500;
-  font-style: normal;
-}
-.footer__title.title {
-  color: var(--branco);
-  font-size: 60px;
-  font-weight: 600;
-  letter-spacing: -3px;
-  max-width: 300px;
-  margin-bottom: 40px;
-  line-height: 1;
-}
-.footer__vermapa {
-  display: inline-block;
-  margin-top: 25px;
-  line-height: 40px;
-  font-weight: 500;
-  color: var(--cor-secondaria);
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-.footer__ilustras {
-  position: absolute;
-  bottom: 10vh;
-  right: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  size: 50vw 80vh;
-  pointer-events: none;
-}
-.footer__ilustras svg {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-}
-.footer__ilustras .triangulo1,
-.footer__ilustras .triangulo2,
-.footer__ilustras .triangulo3 {
-  animation-delay: 0;
-  animation-duration: 2s, 6s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
+.triangulo1,
+.triangulo2,
+.triangulo3 {
+  animation-duration: 2s, 6s; /* Duração para o desenho e ocultação */
+  animation-fill-mode: forwards; /* Mantém o estado final após a animação */
+  animation-iteration-count: infinite; /* Repetição infinita */
   animation-timing-function: cubic-bezier(1, 0.01, 0.05, 1), linear;
 }
-.footer__ilustras .triangulo1 {
-  stroke-dasharray: 1680;
-  stroke-dashoffset: 1680;
-  animation-name: dash, hide1;
+
+.triangulo1 {
+  stroke-dasharray: 1680; /* Comprimento total da linha */
+  stroke-dashoffset: 1680; /* Offset inicial (invisível) */
+  animation-name: dash, hide1; /* Nomes das animações */
+  animation-delay: 0s, 2s; /* Atraso antes de cada animação */
 }
-.footer__ilustras .triangulo2 {
+
+.triangulo2 {
   stroke-dasharray: 1675;
   stroke-dashoffset: 1675;
   animation-name: dash, hide2;
+  animation-delay: 2s, 4s; /* Inicia após a animação do primeiro triângulo */
 }
-.footer__ilustras .triangulo3 {
+
+.triangulo3 {
   stroke-dasharray: 1640;
   stroke-dashoffset: 1640;
   animation-name: dash, hide3;
-}
-/* @media $larger {
-    .footer__ilustras {
-      height: 70vh;
-    }
-    .footer__title.title {
-      font-size: 44px;
-    }
-  }
-  @media $large {
-    .footer__ilustras {
-      height: 60vh;
-    }
-  }
-  @media $medium {
-    .footer__intro {
-      margin-bottom: 10vw;
-    }
-    .footer__ilustras {
-      right: -5vw;
-      bottom: 0;
-    }
-  }
-  @media $small {
-    .footer__title.title {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -1px;
-    }
-    .footer__ilustras {
-      position: static;
-      width: 100%;
-      height: 100%;
-    }
-    .footer__ilustras svg {
-      width: 100%;
-      height: auto;
-      bottom: 5vh;
-    }
-  }
-  @media $smaller {
-    .footer__title.title {
-      font-size: 28px;
-    }
-  }
-  @media $smallest {
-    .footer__title.title {
-      font-size: 24px;
-    }
-    .footer__endereco address {
-      font-size: 12px;
-    }
-  } */
-@keyframes skiua {
-  from {
-    transform: rotate(10deg) skew(10deg);
-  }
-  to {
-    transform: rotate(290deg) skew(20deg);
-  }
+  animation-delay: 4s, 6s; /* Inicia após a animação do segundo triângulo */
 }
 
 @keyframes dash {
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 0; /* Desenha o triângulo */
   }
 }
 
 @keyframes hide1 {
-  0% {
-    opacity: 0;
-  }
+  0%,
   1% {
     opacity: 0;
   }
-  2% {
-    opacity: 1;
-  }
+  2%,
   32% {
     opacity: 1;
   }
-  33% {
-    opacity: 0;
-  }
+  33%,
   100% {
     opacity: 0;
   }
 }
 
 @keyframes hide2 {
-  0% {
-    opacity: 0;
-  }
+  0%,
   34% {
     opacity: 0;
   }
-  35% {
-    opacity: 1;
-  }
+  35%,
   65% {
     opacity: 1;
   }
-  66% {
-    opacity: 0;
-  }
+  66%,
   100% {
     opacity: 0;
   }
 }
 
 @keyframes hide3 {
-  0% {
-    opacity: 0;
-  }
-  33% {
-    opacity: 0;
-  }
+  0%,
+  33%,
   67% {
     opacity: 0;
   }
-  68% {
-    opacity: 1;
-  }
+  68%,
   98% {
     opacity: 1;
   }
-  99% {
-    opacity: 0;
-  }
+  99%,
   100% {
     opacity: 0;
   }
