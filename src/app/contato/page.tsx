@@ -1,7 +1,10 @@
+'use client';
+
 import Social from '@/components/Social';
 import { Button } from '@/components/ui/button';
 import { MdOutlinePlayArrow } from 'react-icons/md';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import '@/styles/contato.css';
 
 export default function Contato() {
@@ -9,10 +12,15 @@ export default function Contato() {
     <main className="bg-[url('/assets/img/contato-footer.png')] bg-bottom bg-contain bg-no-repeat content-[''] w-full h-full contato__bg">
       <div className="relative min-h-dvh container sm:w-4/5 min-[1920px]:w-9/12 mx-auto px-4 grid gap-16">
         <section className="py-40 pb-16 grid gap-24 lg:grid-cols-3 lg:gap-x-0 xl:gap-48 xl:min-h-dvh">
-          <h1 className="w-3/4 font-semibold lg:col-span-2 xl:text-3xl">
+          <motion.h1
+            className="w-3/4 font-semibold lg:col-span-2 xl:text-3xl"
+            initial={{ y: 15, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: 'easeIn', duration: 0.8 }}
+          >
             Quer saber mais sobre a Maximize ou busca desenvolver um projeto com nosso time? Vamos
             conversar!
-          </h1>
+          </motion.h1>
           <div className="grid gap-8 md:grid-cols-2 md:grid-rows-[auto_auto] lg:row-start-2 lg:col-start-2 lg:col-span-2">
             <div className="">
               <h2 className="uppercase text-xs text-[var(--cinzaescuro3)]">Telefone:</h2>
@@ -55,9 +63,15 @@ export default function Contato() {
           </div>
         </section>
         <section className="grid grid-cols-1 gap-28 lg:grid-cols-3 lg:gap-x-0 lg:min-h-[90dvh] lg:grid-rows-[auto_200px_auto]">
-          <h1 className="w-56 h-fit font-semibold text-2xl xl:text-4xl lg:col-span-3 lg:w-[400px]">
+          <motion.h1
+            className="w-56 h-fit font-semibold text-2xl xl:text-4xl lg:col-span-3 lg:w-[400px]"
+            initial={{ y: 15, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ amount: 0.8 }}
+            transition={{ ease: 'easeIn', duration: 0.8 }}
+          >
             Quer fazer parte da nossa equipe?
-          </h1>
+          </motion.h1>
           <ul className="grid gap-4 row-start-2 col-span-3 lg:col-start-2">
             <li>
               <Link
