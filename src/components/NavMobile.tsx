@@ -32,7 +32,11 @@ export default function NavMobile() {
           <ul className="grid gap-8">
             {links.map(({ href, label }) => (
               <li key={href}>
-                <Link href={href} className="text-[15px] uppercase font-medium">
+                <Link
+                  href={href}
+                  className="text-[15px] uppercase font-medium"
+                  onClick={() => setOpen(false)}
+                >
                   {label}
                 </Link>
               </li>

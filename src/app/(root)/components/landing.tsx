@@ -1,7 +1,5 @@
-'use client';
-
 import '@/styles/landing.css';
-import { motion } from 'framer-motion';
+import * as motion from 'framer-motion/client';
 
 const variants = {
   initial: { opacity: 0 },

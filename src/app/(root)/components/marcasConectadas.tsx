@@ -1,3 +1,5 @@
+'use client';
+
 import guaranaJesus from '@img/clientes/guaranajesus.webp';
 import addera from '@img/clientes/addera.svg';
 import benegrip from '@img/clientes/benegrip.svg';
@@ -20,6 +22,7 @@ import berg from '@img/clientes/berg.png';
 import undb from '@img/clientes/undb.webp';
 import dbosco from '@img/clientes/dbosco.svg';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const marcas = [
   { src: guaranaJesus, alt: 'Guaraná Jesus' },
@@ -47,20 +50,24 @@ const marcas = [
 
 export default function MarcasConectadas() {
   return (
-    <div className="h-full w-full" id="marcas">
-      <h3 className="text-4xl sm:text-6xl font-semibold -tracking-[3px] mb-24">
+    <div className="h-full w-full mb-8" id="marcas">
+      <h3 className="text-4xl sm:text-6xl font-semibold -tracking-[3px] mb-12">
         Marcas
         <br />
         conectadas
       </h3>
       <ul className="gap-6 grid grid-cols-3 sm:grid-cols-4 sm:gap-10 lg:grid-cols-6 xl:grid-cols-7">
         {marcas.map((marca) => (
-          <li
+          <motion.li
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ amount: 0.8 }}
+            transition={{ ease: 'easeIn', duration: 0.8 }}
             key={marca.alt}
             className="max-w-[150px] w-full aspect-square flex items-center grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
           >
             <Image src={marca.src} alt={marca.alt} className="h-full w-full object-contain" />
-          </li>
+          </motion.li>
         ))}
       </ul>
     </div>
