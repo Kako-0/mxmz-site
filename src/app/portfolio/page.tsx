@@ -23,7 +23,7 @@ const cases = [
     subtitle: 'Social Media',
     year: '2020',
     thumbFull: GuaranaJesusFull,
-    link: 'https://maximize.com.br/portfolio/guarana-jesus',
+    link: '/portfolio/guarana-jesus',
     filters: ['tecnologia', 'marketing', 'filtros'],
   },
   {

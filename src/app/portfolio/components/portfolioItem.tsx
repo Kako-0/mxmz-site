@@ -39,7 +39,7 @@ function PortfolioItem({
         <p>{year}</p>
       </div>
       <div className="bg-white absolute w-full h-full inset-0 grayscale brightness-50 transition-all duration-300 ease-in group-hover:grayscale-0 group-hover:brightness-100">
-        <Image src={thumbFull} alt={title} layout="fill" objectFit="cover" />
+        <Image src={thumbFull} alt={title} className="object-cover h-full" />
       </div>
     </Link>
   );
