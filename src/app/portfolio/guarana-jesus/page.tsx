@@ -39,9 +39,12 @@ const item = {
 
 function GuaranaJesus() {
   return (
-    <main className="bg-[var(--branco2)] text-[var(--grafite)] leading-7">
-      <section className="flex flex-col items-center justify-center h-[80dvh] relative z-[1]">
-        <div className="text-3xl font-semibold text-center tracking-[-2px] text-white">
+    <main className="bg-[var(--branco2)] text-[var(--grafite)] leading-7 grid gap-16">
+      <section
+        className="flex flex-col items-center justify-center h-[80dvh] relative z-[1]"
+        id="banner"
+      >
+        <div className="text-3xl md:text-5xl lg:text-7xl font-semibold text-center tracking-[-2px] text-white">
           <h1>{item.title}</h1>
           <h2>{item.subtitle}</h2>
           <p className="uppercase tracking-[6px] text-sm mt-8 font-medium">{item.type}</p>
@@ -53,10 +56,17 @@ function GuaranaJesus() {
           className="h-full absolute inset-0 -z-[1] object-cover grayscale brightness-[.4]"
         />
       </section>
-      <section className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4 ">
+      <section
+        className="container sm:w-4/5 lg:w-1/2 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4"
+        id="description"
+      >
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-semibold tracking-[-2px]">O projeto</h1>
-          <p className="tracking-[10px] font-light">{item.year}</p>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-2px]">
+            O projeto
+          </h1>
+          <p className="tracking-[10px] font-light sm:text-xl md:text-2xl lg:text-3xl">
+            {item.year}
+          </p>
         </div>
         <div className="flex flex-col gap-4 items-start">
           <p>
@@ -67,27 +77,34 @@ function GuaranaJesus() {
             virtuais. Além do hotsite, enviamos kits personalizados da campanha para
             influenciadores, imprensa e utilizamos o Google Ads para divulgar a campanha.
           </p>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" size="lg" className="uppercase my-8">
             <Link href={item.link}>Acesse o site</Link>
           </Button>
         </div>
-        <article>
-          <h1>Briefing</h1>
+        <article className="grid gap-4 lg:grid-cols-2 lg:gap-12">
+          <h1 className="flex flex-col w-fit lg:w-full lg:flex-row lg:justify-between font-semibold sm:text-xl md:text-2xl lg:text-3xl relative after:content-[''] after:h-[2px] after:w-2/3 lg:after:w-16 after:mt-2 after:bg-[var(--vermelho)] after:relative">
+            Briefing
+          </h1>
           <p>
             Com a comunicação nas redes sociais da marca pausada, como poderíamos, no cenário de
             pandemia, celebrar o aniversário de 408 anos de São Luís? Criamos uma ação 100% digital
             que permitia compartilhar amor em forma de postais com pessoas queridas de todo o país.
           </p>
         </article>
-        <article>
-          <h1>Recursos</h1>
+        <article className="grid gap-4 lg:grid-cols-2 lg:gap-12">
+          <h1 className="flex flex-col w-fit lg:w-full lg:flex-row lg:justify-between font-semibold sm:text-xl md:text-2xl lg:text-3xl relative after:content-[''] after:h-[2px] after:w-2/3 md:after:w-16 after:mt-2 after:bg-[var(--vermelho)] after:relative">
+            Recursos
+          </h1>
           <ul>
             <li>Vue.js</li>
             <li>Google Maps API</li>
           </ul>
         </article>
       </section>
-      <section className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 grid gap-16">
+      <section
+        className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 grid gap-16"
+        id="screenshots"
+      >
         {item.screenshots.map((screenshot) => {
           return (
             <article key={screenshot.title} className="grid gap-8">
@@ -99,7 +116,7 @@ function GuaranaJesus() {
                   loop
                   muted
                   playsInline
-                  className="shadow-[0_0_40px_0_rgba(0,0,0,0.15)]"
+                  className="shadow-[0_0_40px_0_rgba(0,0,0,0.15)] lg:w-4/5"
                 >
                   <source src={screenshot.src.toString()} type="video/mp4" />
                   <track src="" kind="captions" srcLang="en" label="English" />
@@ -108,14 +125,17 @@ function GuaranaJesus() {
                 <Image
                   src={screenshot.src}
                   alt={screenshot.title}
-                  className="shadow-[0_0_40px_0_rgba(0,0,0,0.15)]"
+                  className="shadow-[0_0_40px_0_rgba(0,0,0,0.15)] lg:w-4/5"
                 />
               )}
             </article>
           );
         })}
       </section>
-      <section className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 gap-8 bg-slate-200 flex flex-col overflow-hidden h-dvh">
+      <section
+        className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 gap-8 bg-slate-200 flex flex-col overflow-hidden h-dvh"
+        id="screenshotsMobile"
+      >
         <h1 className="tracking-[10px] font-light uppercase mx-8">Mobile</h1>
         <div className="overflow-x-auto flex gap-4 h-full">
           {item.screenshotsMobile.map(
