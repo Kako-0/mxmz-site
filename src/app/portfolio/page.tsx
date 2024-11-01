@@ -31,7 +31,7 @@ const cases = [
     subtitle: 'Website',
     year: '2019',
     thumbFull: PDFMAFull,
-    link: 'https://maximize.com.br/portfolio/pdf-ma',
+    link: '/portfolio/pdf-ma',
     filters: ['tecnologia'],
   },
   {
