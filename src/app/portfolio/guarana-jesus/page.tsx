@@ -1,4 +1,7 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
+import Autoplay from 'embla-carousel-autoplay';
 import GuaranaJesusFull from '@img/guaranajesus/full.jpg';
 import Home from '@img/guaranajesus/1.png';
 import EscolhaPostal from '@img/guaranajesus/2.png';
@@ -11,14 +14,27 @@ import Mobile2 from '@img/guaranajesus/mobile2.png';
 import Mobile3 from '@img/guaranajesus/mobile3.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import React from 'react';
 
 const item = {
   title: 'Guaraná Jesus',
   subtitle: '408 Anos São Luís',
   type: 'hotsite',
-  year: '2020',
+  year: '2019',
   thumbFull: GuaranaJesusFull,
   link: '/portfolio/guarana-jesus',
+  description: [
+    {
+      title: 'Briefing',
+      content:
+        'Com a comunicação nas redes sociais da marca pausada, como poderíamos, no cenário de pandemia, celebrar o aniversário de 408 anos de São Luís? Criamos uma ação 100% digital que permitia compartilhar amor em forma de postais com pessoas queridas de todo o país.',
+    },
+    {
+      title: 'Recursos',
+      content: ['Vue.js', 'Google Maps API'],
+    },
+  ],
   screenshots: [
     { title: 'Processo', src: '/assets/img/guaranajesus/video.mp4', type: 'video' },
     { title: 'Cartão postal', src: '/assets/img/guaranajesus/flip.mp4', type: 'video' },
@@ -53,11 +69,11 @@ function GuaranaJesus() {
         <Image
           src={item.thumbFull}
           alt={item.title}
-          className="h-full absolute inset-0 -z-[1] object-cover grayscale brightness-[.4]"
+          className="h-full absolute inset-0 -z-[1] object-cover grayscale brightness-[.4] min-[1920px]:object-cover min-[1920px]:w-full"
         />
       </section>
       <section
-        className="container sm:w-4/5 lg:w-1/2 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4"
+        className="container sm:w-4/5 2xl:w-1/2 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4"
         id="description"
       >
         <div className="flex justify-between items-center mb-8">
@@ -82,33 +98,36 @@ function GuaranaJesus() {
           </Button>
         </div>
         <article className="grid gap-4 lg:grid-cols-2 lg:gap-12">
-          <h1 className="flex flex-col w-fit lg:w-full lg:flex-row lg:justify-between font-semibold sm:text-xl md:text-2xl lg:text-3xl relative after:content-[''] after:h-[2px] after:w-2/3 lg:after:w-16 after:mt-2 after:bg-[var(--vermelho)] after:relative">
-            Briefing
-          </h1>
-          <p>
-            Com a comunicação nas redes sociais da marca pausada, como poderíamos, no cenário de
-            pandemia, celebrar o aniversário de 408 anos de São Luís? Criamos uma ação 100% digital
-            que permitia compartilhar amor em forma de postais com pessoas queridas de todo o país.
-          </p>
-        </article>
-        <article className="grid gap-4 lg:grid-cols-2 lg:gap-12">
-          <h1 className="flex flex-col w-fit lg:w-full lg:flex-row lg:justify-between font-semibold sm:text-xl md:text-2xl lg:text-3xl relative after:content-[''] after:h-[2px] after:w-2/3 md:after:w-16 after:mt-2 after:bg-[var(--vermelho)] after:relative">
-            Recursos
-          </h1>
-          <ul>
-            <li>Vue.js</li>
-            <li>Google Maps API</li>
-          </ul>
+          {item.description.map((desc) => {
+            return (
+              <React.Fragment key={desc.title}>
+                <h1 className="flex flex-col w-fit lg:w-full lg:flex-row lg:justify-between font-semibold sm:text-xl md:text-2xl lg:text-3xl relative after:content-[''] after:h-[2px] after:w-2/3 lg:after:w-16 after:mt-2 after:bg-[var(--vermelho)] after:relative">
+                  {desc.title}
+                </h1>
+                {Array.isArray(desc.content) ? (
+                  <ul>
+                    {desc.content.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{desc.content}</p>
+                )}
+              </React.Fragment>
+            );
+          })}
         </article>
       </section>
       <section
-        className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 grid gap-16"
+        className="container sm:w-4/5 2xl:w-3/4 min-[1920px]:w-9/12 mx-auto p-4 py-16 grid gap-16"
         id="screenshots"
       >
         {item.screenshots.map((screenshot) => {
           return (
-            <article key={screenshot.title} className="grid gap-8">
-              <h1 className="tracking-[10px] font-light uppercase mx-8">{screenshot.title}</h1>
+            <article key={screenshot.title} className="grid gap-8 justify-items-center">
+              <h1 className="tracking-[10px] font-light uppercase mx-8 justify-self-start lg:ml-64">
+                {screenshot.title}
+              </h1>
               {screenshot.type === 'video' ? (
                 <video
                   width="100%"
@@ -132,18 +151,38 @@ function GuaranaJesus() {
           );
         })}
       </section>
-      <section
-        className="container sm:w-4/5 min-[1920px]:w-9/12 mx-auto p-4 py-16 gap-8 bg-slate-200 flex flex-col overflow-hidden h-dvh"
-        id="screenshotsMobile"
-      >
-        <h1 className="tracking-[10px] font-light uppercase mx-8">Mobile</h1>
-        <div className="overflow-x-auto flex gap-4 h-full">
-          {item.screenshotsMobile.map(
-            (screenshot) =>
-              screenshot.type === 'image' && (
-                <Image src={screenshot.src} alt={screenshot.title} key={screenshot.title} />
-              )
-          )}
+      <section className="bg-slate-200" id="screenshotsMobile">
+        <div className="container sm:w-4/5 2xl:w-3/4 min-[1920px]:w-9/12 mx-auto p-4 py-16 gap-8 flex flex-col overflow-hidden h-dvh">
+          <h1 className="tracking-[10px] font-light uppercase mx-8 lg:ml-64">Mobile</h1>
+          <Carousel
+            className="w-full"
+            opts={{
+              align: 'center',
+              slidesToScroll: 1,
+              loop: true,
+              active: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
+          >
+            <CarouselContent className="">
+              {item.screenshotsMobile.map(
+                (screenshot) =>
+                  screenshot.type === 'image' && (
+                    <CarouselItem key={screenshot.title} className="max-h-[720px] max-w-fit">
+                      <Image
+                        src={screenshot.src}
+                        alt={screenshot.title}
+                        className="object-contain h-full"
+                      />
+                    </CarouselItem>
+                  )
+              )}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
     </main>
