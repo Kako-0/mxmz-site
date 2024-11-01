@@ -12,10 +12,10 @@ import { useState } from 'react';
 const Header = () => {
   const { scrollYProgress } = useScroll();
 
-  const paddingAnimation = useTransform(scrollYProgress, [0, 0.1], ['py-8', 'py-3']);
+  const paddingAnimation = useTransform(scrollYProgress, [0, 0.03], ['py-8', 'py-3']);
   const bgAnimation = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.25],
+    [0, 0.02, 0.03],
     [
       'bg-transparent',
       'bg-transparent',
