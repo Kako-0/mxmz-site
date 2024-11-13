@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import GuaranaJesusFull from '@img/guaranajesus/full.jpg';
 import PDFMAFull from '@img/pdfma/full.jpg';
 import CorreSioFull from '@img/corresio/full.jpg';
@@ -15,7 +15,7 @@ const cases = [
     subtitle: 'Game',
     year: '2020',
     thumbFull: CorreSioFull,
-    link: 'https://maximize.com.br/portfolio/corre-sio',
+    link: 'portfolio/corre-sio',
     filters: ['tecnologia', 'filtros'],
   },
   {
@@ -39,7 +39,7 @@ const cases = [
     subtitle: 'Website',
     year: '2020',
     thumbFull: ValparaisoFull,
-    link: 'https://maximize.com.br/portfolio/valparaiso',
+    link: '/portfolio/valparaiso',
     filters: ['tecnologia'],
   },
 ];
