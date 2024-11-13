@@ -16,6 +16,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const item = {
   title: 'Guaraná Jesus',
@@ -53,28 +54,71 @@ const item = {
   filters: ['tecnologia', 'marketing', 'filtros'],
 };
 
+const variants = {
+  image: {
+    initial: { filter: 'grayscale(0) brightness(1)' },
+    animate: { filter: 'grayscale(1) brightness(.4)' },
+  },
+  banner: {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  },
+};
+const text = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
+
 function GuaranaJesus() {
   return (
     <main className="bg-[var(--branco2)] text-[var(--grafite)] leading-7 grid gap-16">
-      <section
+      <motion.section
         className="flex flex-col items-center justify-center h-[80dvh] relative z-[1]"
         id="banner"
       >
-        <div className="text-3xl md:text-5xl lg:text-7xl font-semibold text-center tracking-[-2px] text-white">
-          <h1>{item.title}</h1>
-          <h2>{item.subtitle}</h2>
-          <p className="uppercase tracking-[6px] text-sm mt-8 font-medium">{item.type}</p>
-        </div>
+        <motion.div
+          className="text-3xl md:text-5xl lg:text-7xl font-semibold text-center tracking-[-2px] text-white"
+          variants={variants.banner}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 1 }}
+        >
+          <motion.h1 variants={text} transition={{ ease: 'easeIn' }}>
+            {item.title}
+          </motion.h1>
+          <motion.h2 variants={text} transition={{ ease: 'easeIn' }}>
+            {item.subtitle}
+          </motion.h2>
+          <motion.p
+            variants={text}
+            transition={{ delay: 0.5 }}
+            className="uppercase tracking-[6px] text-sm mt-8 font-medium"
+          >
+            {item.type}
+          </motion.p>
+        </motion.div>
 
-        <Image
-          src={item.thumbFull}
+        <motion.img
+          src={item.thumbFull.src}
           alt={item.title}
           className="h-full absolute inset-0 -z-[1] object-cover grayscale brightness-[.4] min-[1920px]:object-cover min-[1920px]:w-full"
+          initial={variants.image.initial}
+          animate={variants.image.animate}
+          variants={variants.image}
+          transition={{ ease: [0.73, 0.01, 0.5, 0.5] }}
         />
-      </section>
-      <section
+      </motion.section>
+      <motion.section
         className="container sm:w-4/5 2xl:w-1/2 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4"
         id="description"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, ease: 'easeIn' }}
       >
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-2px]">
@@ -117,7 +161,7 @@ function GuaranaJesus() {
             );
           })}
         </article>
-      </section>
+      </motion.section>
       <section
         className="container sm:w-4/5 2xl:w-3/4 min-[1920px]:w-9/12 mx-auto p-4 py-16 grid gap-16"
         id="screenshots"
