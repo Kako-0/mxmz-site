@@ -7,6 +7,13 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import '@/styles/contato.css';
 import Header from '@/components/Header';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contato - Maximize',
+  description:
+    'Quer saber mais sobre a Maximize ou busca desenvolver um projeto com nosso time? Vamos conversar!',
+};
 
 export default function Contato() {
   return (

@@ -6,6 +6,7 @@ import ValparaisoFull from '@img/valparaiso/full.jpg';
 import Aventura from '@img/valparaiso/2.jpg';
 import Ingressos from '@img/valparaiso/3.jpg';
 import Contato from '@img/valparaiso/4.jpg';
+import type { Metadata } from 'next';
 
 const item: PortfolioItem = {
   title: 'Valparaíso Adventure Park',
@@ -34,6 +35,11 @@ const item: PortfolioItem = {
     { title: 'Contato', src: Contato, type: 'image' },
   ],
   filters: ['tecnologia', 'marketing', 'filtros'],
+};
+
+export const metadata: Metadata = {
+  title: `${item.title} - Maximize`,
+  description: item.resume,
 };
 
 function Valparaiso() {

@@ -2,7 +2,14 @@
 
 import MenuIcon from '@img/menu-icon.svg';
 import Image from 'next/image';
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from './ui/sheet';
 import Link from 'next/link';
 import useWindowDimensions from '@/hooks/useWindowDimensions';
 import { useEffect, useState } from 'react';
@@ -27,7 +34,10 @@ export default function NavMobile() {
         <span className="sr-only">Menu</span>
         <Image src={MenuIcon} alt="Menu" width={28} height={28} />
       </SheetTrigger>
-      <SheetContent className="linearRed p-24 px-16 menuLine">
+      <SheetContent className="linearRed p-24 px-16 menuLine" aria-describedby={undefined}>
+        <SheetHeader className="sr-only">
+          <SheetTitle>Menu</SheetTitle>
+        </SheetHeader>
         <nav className="flex flex-col justify-end h-full">
           <ul className="grid gap-8">
             {links.map(({ href, label }) => (

@@ -4,6 +4,7 @@ import CorresioFull from '@img/corresio/full.jpg';
 import HowToPlay from '@img/corresio/2.jpg';
 import LayoutPortfolioItem from '@/components/layouts/LayoutPortfolioItem';
 import type { PortfolioItem } from '@/app/types/portfolioItemType';
+import type { Metadata } from 'next';
 
 const item: PortfolioItem = {
   title: 'Corre siô',
@@ -28,6 +29,11 @@ const item: PortfolioItem = {
     { title: 'Ranking', src: '/assets/img/corresio/3.mp4', type: 'video' },
   ],
   filters: ['tecnologia', 'marketing', 'filtros'],
+};
+
+export const metadata: Metadata = {
+  title: `${item.title} - Maximize`,
+  description: item.resume,
 };
 
 function CorreSio() {

@@ -12,6 +12,7 @@ import Mobile2 from '@img/guaranajesus/mobile2.png';
 import Mobile3 from '@img/guaranajesus/mobile3.png';
 import LayoutPortfolioItem from '@/components/layouts/LayoutPortfolioItem';
 import type { PortfolioItem } from '@/app/types/portfolioItemType';
+import type { Metadata } from 'next';
 
 const item: PortfolioItem = {
   title: 'Guaraná Jesus',
@@ -49,6 +50,11 @@ const item: PortfolioItem = {
     { title: 'Mobile3', src: Mobile3, type: 'image' },
   ],
   filters: ['tecnologia', 'marketing', 'filtros'],
+};
+
+export const metadata: Metadata = {
+  title: `${item.title} - Maximize`,
+  description: item.resume,
 };
 
 function GuaranaJesus() {
