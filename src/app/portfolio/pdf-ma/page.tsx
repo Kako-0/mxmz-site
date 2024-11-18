@@ -1,5 +1,3 @@
-'use client';
-
 import PdfMaFull from '@img/pdfma/full.jpg';
 import Cadastro from '@img/pdfma/1.jpg';
 import Busca from '@img/pdfma/2.jpg';
@@ -46,7 +44,7 @@ const item: PortfolioItem = {
 };
 
 export const metadata: Metadata = {
-  title: `${item.title} - Maximize`,
+  title: `${item.title}`,
   description: item.resume,
 };
 

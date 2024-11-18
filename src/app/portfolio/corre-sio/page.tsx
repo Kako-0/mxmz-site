@@ -1,5 +1,3 @@
-'use client';
-
 import CorresioFull from '@img/corresio/full.jpg';
 import HowToPlay from '@img/corresio/2.jpg';
 import LayoutPortfolioItem from '@/components/layouts/LayoutPortfolioItem';
@@ -32,7 +30,7 @@ const item: PortfolioItem = {
 };
 
 export const metadata: Metadata = {
-  title: `${item.title} - Maximize`,
+  title: `${item.title}`,
   description: item.resume,
 };
 

@@ -1,5 +1,3 @@
-'use client';
-
 import GuaranaJesusFull from '@img/guaranajesus/full.jpg';
 import Home from '@img/guaranajesus/1.png';
 import EscolhaPostal from '@img/guaranajesus/2.png';
@@ -53,7 +51,7 @@ const item: PortfolioItem = {
 };
 
 export const metadata: Metadata = {
-  title: `${item.title} - Maximize`,
+  title: `${item.title}`,
   description: item.resume,
 };
 

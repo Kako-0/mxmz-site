@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { Button } from '../ui/button';
 import Link from 'next/link';
@@ -58,15 +60,22 @@ function LayoutPortfolioItem({ item }: { item: PortfolioItem }) {
           </motion.p>
         </motion.div>
 
-        <motion.img
-          src={item.thumbFull.src}
-          alt={item.title}
-          className="absolute top-0 h-[80dvh] w-full -z-[1] object-cover grayscale brightness-[.4]"
+        <motion.div
+          className="absolute top-0 h-[80dvh] w-full -z-[1] grayscale brightness-[.4]"
           initial={variants.image.initial}
           animate={variants.image.animate}
           variants={variants.image}
           transition={{ ease: [0.73, 0.01, 0.5, 0.5] }}
-        />
+        >
+          <Image
+            src={item.thumbFull}
+            alt={item.title}
+            fill
+            className="object-cover"
+            placeholder="blur"
+            priority={true}
+          />
+        </motion.div>
       </motion.section>
       <motion.section
         className="container sm:w-4/5 2xl:w-1/2 min-[1920px]:w-9/12 mx-auto p-4 grid gap-4"

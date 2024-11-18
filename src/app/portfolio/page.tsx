@@ -8,7 +8,6 @@ import PDFMAFull from '@img/pdfma/full.jpg';
 import CorreSioFull from '@img/corresio/full.jpg';
 import ValparaisoFull from '@img/valparaiso/full.jpg';
 import PortfolioItem from './components/portfolioItem';
-import type { Metadata } from 'next';
 
 const cases = [
   {
@@ -44,12 +43,6 @@ const cases = [
     filters: ['tecnologia'],
   },
 ];
-
-export const metadata: Metadata = {
-  title: 'Portfolio - Maximize',
-  description:
-    'A criatividade e a tecnologia são nossas chaves para envolver o público em cada projeto, gerando engajamento e resultados relevantes.',
-};
 
 export default function Portfolio() {
   const [filters, setFilters] = useState<string[]>([]);

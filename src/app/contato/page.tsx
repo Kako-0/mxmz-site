@@ -1,10 +1,8 @@
-'use client';
-
 import Social from '@/components/Social';
 import { Button } from '@/components/ui/button';
 import { MdOutlinePlayArrow } from 'react-icons/md';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import * as motion from 'framer-motion/client';
 import '@/styles/contato.css';
 import Header from '@/components/Header';
 import type { Metadata } from 'next';

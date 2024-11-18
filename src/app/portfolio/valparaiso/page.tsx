@@ -1,5 +1,3 @@
-'use client';
-
 import LayoutPortfolioItem from '@/components/layouts/LayoutPortfolioItem';
 import type { PortfolioItem } from '@/app/types/portfolioItemType';
 import ValparaisoFull from '@img/valparaiso/full.jpg';
@@ -38,7 +36,7 @@ const item: PortfolioItem = {
 };
 
 export const metadata: Metadata = {
-  title: `${item.title} - Maximize`,
+  title: `${item.title}`,
   description: item.resume,
 };
 
