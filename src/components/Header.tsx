@@ -6,10 +6,10 @@ import Logo from '@img/logo.svg';
 import Nav from './Nav';
 import NavMobile from './NavMobile';
 import Slogan from './Slogan';
-import { useScroll, useTransform, motion, useMotionValueEvent } from 'framer-motion';
+import { useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ colorInitialIsRed = true }) => {
   const { scrollYProgress } = useScroll();
 
   const paddingAnimation = useTransform(scrollYProgress, [0, 0.03], ['py-8', 'py-3']);
@@ -34,7 +34,7 @@ const Header = () => {
   });
 
   return (
-    <motion.header
+    <header
       className={`fixed z-10 p-8 flex justify-between items-center w-full transition-all ease-in duration-150 ${paddingClass} ${bgClass} `}
     >
       <Slogan />
@@ -49,9 +49,9 @@ const Header = () => {
         />
       </Link>
 
-      <Nav />
+      <Nav colorInitialIsRed={colorInitialIsRed} />
       <NavMobile />
-    </motion.header>
+    </header>
   );
 };
 

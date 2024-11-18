@@ -29,7 +29,7 @@ const text = {
 
 function LayoutPortfolioItem({ item }: { item: PortfolioItem }) {
   return (
-    <main className="bg-[var(--branco2)] text-[var(--grafite)] leading-7 grid gap-16">
+    <main className="bg-white text-[var(--grafite)] leading-7 grid gap-4 md:gap-16">
       <motion.section
         className="flex flex-col items-center justify-center h-[80dvh] relative z-[1]"
         id="banner"
@@ -61,7 +61,7 @@ function LayoutPortfolioItem({ item }: { item: PortfolioItem }) {
         <motion.img
           src={item.thumbFull.src}
           alt={item.title}
-          className="h-full absolute inset-0 -z-[1] object-cover grayscale brightness-[.4] min-[1920px]:object-cover min-[1920px]:w-full"
+          className="absolute top-0 h-[80dvh] w-full -z-[1] object-cover grayscale brightness-[.4]"
           initial={variants.image.initial}
           animate={variants.image.animate}
           variants={variants.image}

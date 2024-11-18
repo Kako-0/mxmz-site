@@ -15,28 +15,28 @@ const cases = [
     subtitle: 'Social Media',
     year: '2020',
     thumb: GuaranaJesus,
-    link: 'https://maximize.com.br/portfolio/guarana-jesus',
+    link: '/portfolio/guarana-jesus',
   },
   {
     title: 'PDF Maranhão',
     subtitle: 'Website',
     year: '2019',
     thumb: PDFMA,
-    link: 'https://maximize.com.br/portfolio/pdf-ma',
+    link: '/portfolio/pdf-ma',
   },
   {
     title: 'Corre Siô!',
     subtitle: 'Mobile Game',
     year: '2020',
     thumb: CorreSio,
-    link: 'https://maximize.com.br/portfolio/corre-sio',
+    link: '/portfolio/corre-sio',
   },
   {
     title: 'Valparaíso',
     subtitle: 'Website',
     year: '2020',
     thumb: Valparaiso,
-    link: 'https://maximize.com.br/portfolio/valparaiso',
+    link: '/portfolio/valparaiso',
   },
 ];
 
@@ -64,8 +64,6 @@ export default function Cases() {
           <li key={item.title} className="group">
             <Link
               href={item.link}
-              target="_blank"
-              rel="noreferrer"
               className="relative flex justify-end group-even:justify-start lg:group-even:justify-end lg:static"
             >
               <Image

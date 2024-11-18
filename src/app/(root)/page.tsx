@@ -5,10 +5,12 @@ import '@/styles/home.css';
 import Video from './components/video';
 import Services from './components/services';
 import Cases from './components/cases';
+import Header from '@/components/Header';
 
 export default function Home() {
   return (
     <>
+      <Header colorInitialIsRed={false} />
       <div className="relative min-h-dvh home__bg overflow-x-hidden">
         <Landing />
         <div className="relative z-[2] bg-gradient-to-t from-black to-transparent to-100% bg-no-repeat py-4 sm:py-16 before:hidden lg:before:block before:absolute before:-top-52 before:left-[10%] before:pointer-events-none before:w-[2px] before:h-[250px] before:bg-[var(--branco)] before:content-[''] ">
